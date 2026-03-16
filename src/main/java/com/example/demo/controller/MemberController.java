@@ -19,22 +19,25 @@ public class MemberController {
     public MemberResponse create(@RequestBody CreateMemberRequest request){
         return memberService.create(request);
     }
-    // 전체 조회
+    //전체조회
     @GetMapping
     public List<MemberResponse> findAll(){
         return memberService.findAll();
     }
-    // 단건 조회
+    //단건 조회
     @GetMapping("/{id}")
     public MemberResponse findById(@PathVariable Long id){
         return memberService.findById(id);
     }
-    // 수정
+
+    //수정
     @PatchMapping("/{id}")
     public MemberResponse update(@PathVariable Long id, @RequestBody UpdateMemberRequest request){
-        return memberService.update(id, request);
+        return memberService.update(id,request);
     }
-    // 삭제
+
+
+    //삭제
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         memberService.delete(id);
